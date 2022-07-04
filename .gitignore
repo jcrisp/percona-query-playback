@@ -27,3 +27,4 @@ percona_playback/test/tcpdump_without_handshake
 docs/build/
 docs/plugins/
 
+/.idea/
