@@ -11,4 +11,5 @@ RUN git clone https://github.com/Percona-Lab/query-playback.git /app && \
 #   mkdir -p docs/build && \
 #   docker run --rm --mount type=bind,source=$PWD/docs/build,target=/app/docs/build IMAGE_HASH cd /app/docs && \
 #   make html singlehtml
-ENTRYPOINT /app/build_dir/percona-playback
+ENTRYPOINT ["/app/build_dir/percona-playback"]
+CMD ["--help"]
