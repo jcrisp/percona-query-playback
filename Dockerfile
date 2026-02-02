@@ -1,4 +1,6 @@
 FROM centos:7
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*.repo && \
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*.repo
 RUN yum -y update && \
   yum install -y git tbb tbb-devel cmake boost boost-devel make gcc-c++ doxygen mysql mariadb-devel python-sphinx wget && \
   yum clean all && rm -rf /var/cache/yum
